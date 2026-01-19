@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
-            <span className="text-xl font-serif italic text-foreground">Bitwise</span>
+            <span className="text-xl font-serif italic text-foreground">Alphora</span>
             <p className="text-sm text-muted-foreground mt-4 mb-6">
               The world's leading crypto asset manager.
             </p>
@@ -114,7 +114,7 @@ const Footer = () => {
             Investing in crypto assets involves substantial risk. Performance is not guaranteed. 
             Past performance is not indicative of future results. This is not investment advice. 
             Please consult a qualified financial advisor before making any investment decisions. 
-            © 2026 Bitwise Asset Management. All rights reserved.
+            © 2026 Alphora Group. All rights reserved.
           </p>
         </div>
       </div>

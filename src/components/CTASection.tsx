@@ -4,7 +4,7 @@ const CTASection = () => {
       <div className="container px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-foreground mb-8">
-            Let <span className="font-serif italic">Bitwise</span> help you take the<br />
+            Let <span className="font-serif italic">Alphora</span> help you take the<br />
             next step in your <span className="font-serif italic">crypto journey</span>.
           </h2>
           
