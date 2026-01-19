@@ -23,7 +23,7 @@ const WhyBitwiseSection = () => {
     <section className="py-24 bg-background">
       <div className="container px-6">
         <div className="max-w-3xl mb-16">
-          <span className="text-xs uppercase tracking-wider text-primary mb-4 block">Why Bitwise</span>
+          <span className="text-xs uppercase tracking-wider text-primary mb-4 block">Why Alphora</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-foreground">
             Professional funds managed by crypto experts.
           </h2>

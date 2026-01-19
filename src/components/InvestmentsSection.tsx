@@ -2,29 +2,29 @@ import { ArrowRight } from 'lucide-react';
 
 const investments = [
   {
-    ticker: 'BITB',
-    name: 'Bitwise Bitcoin ETF',
+    ticker: 'ABTC',
+    name: 'Alphora Bitcoin ETF',
     type: 'ETF',
     change: '+2.4%',
     positive: true,
   },
   {
-    ticker: 'ETHW',
-    name: 'Bitwise Ethereum ETF',
+    ticker: 'AETH',
+    name: 'Alphora Ethereum ETF',
     type: 'ETF',
     change: '-1.2%',
     positive: false,
   },
   {
-    ticker: 'BITQ',
-    name: 'Bitwise Crypto Industry Innovators ETF',
+    ticker: 'ACRY',
+    name: 'Alphora Crypto Industry Innovators ETF',
     type: 'ETF',
     change: '+3.1%',
     positive: true,
   },
   {
-    ticker: 'SOLQ',
-    name: 'Bitwise Solana ETF',
+    ticker: 'ASOL',
+    name: 'Alphora Solana ETF',
     type: 'ETF',
     change: '-2.8%',
     positive: false,

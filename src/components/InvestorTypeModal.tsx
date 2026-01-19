@@ -31,7 +31,7 @@ const InvestorTypeModal = ({ onSelect }: InvestorTypeModalProps) => {
       <div className="w-full max-w-5xl px-6 py-12 md:py-20">
         <div className="mb-8">
           <h1 className="text-3xl md:text-4xl font-light text-foreground mb-3">
-            Welcome to <span className="font-serif italic">Bitwise</span>
+            Welcome to <span className="font-serif italic">Alphora</span>
           </h1>
           <p className="text-muted-foreground text-lg">
             Choose your investor type to help us deliver the site experience most relevant to you.
