@@ -6,7 +6,23 @@ interface CryptoPrice {
   change: number;
 }
 
-const cryptoData: CryptoPrice[] = [
+const CRYPTO_IDS = [
+  { id: 'bitcoin', symbol: 'BTC' },
+  { id: 'ethereum', symbol: 'ETH' },
+  { id: 'ripple', symbol: 'XRP' },
+  { id: 'solana', symbol: 'SOL' },
+  { id: 'cardano', symbol: 'ADA' },
+  { id: 'chainlink', symbol: 'LINK' },
+  { id: 'avalanche-2', symbol: 'AVAX' },
+  { id: 'litecoin', symbol: 'LTC' },
+  { id: 'polkadot', symbol: 'DOT' },
+  { id: 'uniswap', symbol: 'UNI' },
+  { id: 'aave', symbol: 'AAVE' },
+  { id: 'near', symbol: 'NEAR' },
+  { id: 'cosmos', symbol: 'ATOM' },
+];
+
+const fallbackData: CryptoPrice[] = [
   { symbol: 'BTC', price: '$93,014.01', change: -2.48 },
   { symbol: 'ETH', price: '$3,215.57', change: -2.18 },
   { symbol: 'XRP', price: '$2.01', change: -2.29 },
@@ -22,7 +38,54 @@ const cryptoData: CryptoPrice[] = [
   { symbol: 'ATOM', price: '$2.47', change: 0.28 },
 ];
 
+const formatPrice = (price: number): string => {
+  if (price >= 1000) {
+    return '$' + price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  } else if (price >= 1) {
+    return '$' + price.toFixed(2);
+  } else {
+    return '$' + price.toFixed(4);
+  }
+};
+
 const CryptoTicker = () => {
+  const [cryptoData, setCryptoData] = useState<CryptoPrice[]>(fallbackData);
+  const [isLive, setIsLive] = useState(false);
+
+  const fetchPrices = async () => {
+    try {
+      const ids = CRYPTO_IDS.map(c => c.id).join(',');
+      const response = await fetch(
+        `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`
+      );
+      
+      if (!response.ok) throw new Error('Failed to fetch');
+      
+      const data = await response.json();
+      
+      const prices: CryptoPrice[] = CRYPTO_IDS.map(crypto => {
+        const coinData = data[crypto.id];
+        return {
+          symbol: crypto.symbol,
+          price: formatPrice(coinData?.usd || 0),
+          change: coinData?.usd_24h_change || 0,
+        };
+      });
+      
+      setCryptoData(prices);
+      setIsLive(true);
+    } catch (error) {
+      console.log('Using fallback crypto data');
+      setIsLive(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchPrices();
+    const interval = setInterval(fetchPrices, 60000); // Update every 60 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="w-full overflow-hidden bg-background/50 border-y border-border py-3">
       <div className="flex animate-marquee animate-marquee-pause">
@@ -39,6 +102,14 @@ const CryptoTicker = () => {
           </div>
         ))}
       </div>
+      {isLive && (
+        <div className="absolute right-4 top-1/2 -translate-y-1/2">
+          <span className="text-xs text-primary flex items-center gap-1">
+            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+            LIVE
+          </span>
+        </div>
+      )}
     </div>
   );
 };
