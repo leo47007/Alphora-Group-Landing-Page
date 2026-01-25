@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Alphora-Group-Landing-Page/",
+  base: "/",
   server: {
     host: "::",
     port: 8080,
