@@ -58,11 +58,11 @@ const CryptoTicker = () => {
       const response = await fetch(
         `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`
       );
-      
+
       if (!response.ok) throw new Error('Failed to fetch');
-      
+
       const data = await response.json();
-      
+
       const prices: CryptoPrice[] = CRYPTO_IDS.map(crypto => {
         const coinData = data[crypto.id];
         return {
@@ -71,7 +71,7 @@ const CryptoTicker = () => {
           change: coinData?.usd_24h_change || 0,
         };
       });
-      
+
       setCryptoData(prices);
       setIsLive(true);
     } catch (error) {

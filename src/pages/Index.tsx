@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import CryptoTicker from '@/components/CryptoTicker';
-import PartnersSection from '@/components/PartnersSection';
 import WhyBitwiseSection from '@/components/WhyBitwiseSection';
+import ClientTypesSection from '@/components/ClientTypesSection';
 import InvestmentsSection from '@/components/InvestmentsSection';
-import InsightsSection from '@/components/InsightsSection';
-import NewsletterSection from '@/components/NewsletterSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import InvestorTypeModal from '@/components/InvestorTypeModal';
@@ -29,11 +27,9 @@ const Index = () => {
         <main>
           <HeroSection />
           <CryptoTicker />
-          <PartnersSection />
           <WhyBitwiseSection />
+          <ClientTypesSection />
           <InvestmentsSection />
-          <InsightsSection />
-          <NewsletterSection />
           <CTASection />
         </main>
         <Footer />

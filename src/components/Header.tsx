@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
-  { label: 'ETFs', hasDropdown: true },
-  { label: 'Products', hasDropdown: true },
-  { label: 'Insights', hasDropdown: true },
-  { label: 'Why Alphora', hasDropdown: true },
-  { label: 'Crypto Basics', hasDropdown: true },
-  { label: 'Investor Portal', hasDropdown: false, href: 'https://treasury.alphoragroup.com/' },
+  { label: 'Services', href: '#services' },
+  { label: 'Client Types', href: '#client-types' },
+  { label: 'Why Alphora', href: '#why-alphora' },
+  { label: 'Treasury Portal', href: 'https://treasury.alphoragroup.com/' },
 ];
 
 const Header = () => {
@@ -18,43 +16,36 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-3">
+            <img src="/favicon.svg" alt="Alphora Group" className="h-8 w-8" />
             <span className="text-xl font-serif italic text-foreground">Alphora</span>
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
-              item.href ? (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                <button
-                  key={item.label}
-                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {item.label}
-                  {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                </button>
-              )
+              <a
+                key={item.label}
+                href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={item.href.startsWith('http')
+                  ? 'flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors font-medium'
+                  : 'flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors'}
+              >
+                {item.label}
+              </a>
             ))}
           </nav>
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Sign In
-            </button>
-            <button className="btn-primary text-sm">
-              Invest Now
-            </button>
+            <a
+              href="mailto:info@alphoragroup.com"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              info@alphoragroup.com
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,29 +62,25 @@ const Header = () => {
           <div className="lg:hidden py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
-                item.href ? (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-primary py-2 font-medium"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <button
-                    key={item.label}
-                    className="flex items-center justify-between text-foreground py-2"
-                  >
-                    {item.label}
-                    {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                  </button>
-                )
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className={item.href.startsWith('http')
+                    ? 'flex items-center text-primary py-2 font-medium'
+                    : 'flex items-center text-foreground py-2'}
+                >
+                  {item.label}
+                </a>
               ))}
               <div className="pt-4 border-t border-border flex flex-col gap-3">
-                <button className="text-muted-foreground">Sign In</button>
-                <button className="btn-primary">Invest Now</button>
+                <a
+                  href="mailto:info@alphoragroup.com"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  info@alphoragroup.com
+                </a>
               </div>
             </nav>
           </div>

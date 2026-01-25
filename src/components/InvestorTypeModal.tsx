@@ -1,4 +1,4 @@
-import { User, Building2, UserCircle } from 'lucide-react';
+import { Building2, Users } from 'lucide-react';
 
 interface InvestorTypeModalProps {
   onSelect: (type: string) => void;
@@ -6,22 +6,16 @@ interface InvestorTypeModalProps {
 
 const investorTypes = [
   {
-    id: 'financial-professional',
-    icon: User,
-    title: 'Financial Professional',
-    description: "I'm looking for investments for my clients, timely insights, and to connect with my relationship manager.",
-  },
-  {
-    id: 'institutional',
+    id: 'corporate-client',
     icon: Building2,
-    title: 'Institutional Investor',
-    description: "I'm looking for investment strategies and research, and to connect with my relationship manager.",
+    title: 'Corporate Client',
+    description: "I'm looking for treasury visibility, cross-border AR/AP support, and strategic financial guidance.",
   },
   {
-    id: 'individual',
-    icon: UserCircle,
-    title: 'Individual Investor',
-    description: "I'm looking for investment solutions and education for myself.",
+    id: 'family-office',
+    icon: Users,
+    title: 'Family Office',
+    description: "I'm looking for tailored on-chain and off-chain strategies and ongoing treasury management.",
   },
 ];
 
@@ -34,21 +28,8 @@ const InvestorTypeModal = ({ onSelect }: InvestorTypeModalProps) => {
             Welcome to <span className="font-serif italic">Alphora</span>
           </h1>
           <p className="text-muted-foreground text-lg">
-            Choose your investor type to help us deliver the site experience most relevant to you.
+            Choose your client type to help us deliver the site experience most relevant to you.
           </p>
-        </div>
-
-        <div className="flex justify-end mb-8">
-          <div className="flex flex-col items-end gap-1">
-            <span className="text-xs text-muted-foreground">Location:</span>
-            <div className="flex items-center gap-2 bg-secondary px-3 py-2 rounded-md">
-              <span className="text-sm">🇺🇸</span>
-              <span className="text-sm text-foreground">United States</span>
-              <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4">

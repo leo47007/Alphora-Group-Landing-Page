@@ -30,8 +30,8 @@ const PartnersSection = () => {
         </div>
 
         <p className="text-center text-xs text-muted-foreground/50 mt-10 max-w-2xl mx-auto">
-          The companies listed are venture investors in Alphora Group. 
-          Logos do not imply endorsement or investment in Alphora products.
+          The companies listed are strategic backers of Alphora Group.
+          Logos do not imply endorsement of Alphora services.
         </p>
       </div>
     </section>

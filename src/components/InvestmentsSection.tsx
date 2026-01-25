@@ -1,72 +1,52 @@
-import { ArrowRight } from 'lucide-react';
-
-const investments = [
+const services = [
   {
-    ticker: 'ABTC',
-    name: 'Alphora Bitcoin ETF',
-    type: 'ETF',
-    change: '+2.4%',
-    positive: true,
+    title: 'Cashflow visualization for CFOs',
+    description: 'Unified dashboards for liquidity, runway tracking, and scenario planning.',
+    tag: 'Core Service',
   },
   {
-    ticker: 'AETH',
-    name: 'Alphora Ethereum ETF',
-    type: 'ETF',
-    change: '-1.2%',
-    positive: false,
+    title: 'Cross-border treasury management for AR/AP',
+    description: 'Centralize collections and payouts across entities, currencies, and counterparties.',
+    tag: 'Core Service',
   },
   {
-    ticker: 'ACRY',
-    name: 'Alphora Crypto Industry Innovators ETF',
-    type: 'ETF',
-    change: '+3.1%',
-    positive: true,
-  },
-  {
-    ticker: 'ASOL',
-    name: 'Alphora Solana ETF',
-    type: 'ETF',
-    change: '-2.8%',
-    positive: false,
+    title: 'Tailor-made on-chain and off-chain financial strategy',
+    description: 'Design policy, execution, and risk controls across digital and traditional rails.',
+    tag: 'Core Service',
   },
 ];
 
 const InvestmentsSection = () => {
   return (
-    <section className="py-24 bg-card/30">
+    <section id="services" className="py-24 bg-card/30 scroll-mt-24">
       <div className="container px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
-            <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Investments</span>
+            <span className="text-xs uppercase tracking-wider text-muted-foreground mb-4 block">Services</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-foreground">
-              Professionally managed exposure to<br className="hidden md:block" />
-              a growing world of <span className="font-serif italic">crypto opportunities</span>.
+              Core treasury and finance services
+              <br className="hidden md:block" />
+              tailored to <span className="font-serif italic">modern operations</span>.
             </h2>
           </div>
-          <button className="mt-6 md:mt-0 flex items-center gap-2 text-primary hover:gap-3 transition-all">
-            View All Products <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {investments.map((investment) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {services.map((service) => (
             <div
-              key={investment.ticker}
+              key={service.title}
               className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-all group cursor-pointer"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded">
-                  {investment.type}
-                </span>
-                <span className={investment.positive ? 'text-primary text-sm' : 'text-red-500 text-sm'}>
-                  {investment.change}
+                  {service.tag}
                 </span>
               </div>
               <h3 className="text-xl font-medium text-foreground mb-2 group-hover:text-primary transition-colors">
-                {investment.ticker}
+                {service.title}
               </h3>
               <p className="text-sm text-muted-foreground">
-                {investment.name}
+                {service.description}
               </p>
             </div>
           ))}

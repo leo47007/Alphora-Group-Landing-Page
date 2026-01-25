@@ -15,7 +15,7 @@ const NewsletterSection = () => {
       <div className="container px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-light text-foreground mb-6">
-            Sign up to receive the <span className="font-serif italic">latest crypto</span><br />
+            Sign up to receive the <span className="font-serif italic">latest treasury</span><br />
             trends, insights, and company news.
           </h2>
           
