@@ -16,9 +16,8 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
-            <img src="/favicon.svg" alt="Alphora Group" className="h-8 w-8" />
-            <span className="text-xl font-serif italic text-foreground">Alphora</span>
+          <a href="/" className="flex items-center">
+            <img src="/Alphora-LOGO.png" alt="Alphora Group" className="h-9 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
