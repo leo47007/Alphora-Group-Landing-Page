@@ -22,7 +22,7 @@ const investorTypes = [
     icon: User,
     title: 'Individual',
     description:
-      'Alphora Insights gives you premium access to AI-powered market sentiment dashboards, portfolio tracking, and actionable signal tools for equities, commodities, and crypto. Includes continuous product updates and secure account access. Manage or switch monthly/annual plans anytime in the customer portal; plan changes take effect at next renewal.',
+      'Alphora Insights gives you premium access to AI-powered market sentiment dashboards, portfolio tracking, and actionable signal tools for equities, commodities, and crypto.',
   },
 ];
 
