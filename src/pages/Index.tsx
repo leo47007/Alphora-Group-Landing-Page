@@ -11,10 +11,13 @@ import InvestorTypeModal from '@/components/InvestorTypeModal';
 
 const Index = () => {
   const [showModal, setShowModal] = useState(true);
-  const [selectedInvestorType, setSelectedInvestorType] = useState<string | null>(null);
 
   const handleInvestorSelect = (type: string) => {
-    setSelectedInvestorType(type);
+    if (type === 'individual') {
+      window.location.assign('https://insights.alphoragroup.com/');
+      return;
+    }
+
     setShowModal(false);
   };
 

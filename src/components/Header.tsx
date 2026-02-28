@@ -5,6 +5,7 @@ const navItems = [
   { label: 'Services', href: '#services' },
   { label: 'Client Types', href: '#client-types' },
   { label: 'Why Alphora', href: '#why-alphora' },
+  { label: 'Insights Portal', href: 'https://insights.alphoragroup.com/' },
   { label: 'Treasury Portal', href: 'https://treasury.alphoragroup.com/' },
 ];
 
@@ -17,7 +18,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img src="/Alphora-LOGO.png" alt="Alphora Group" className="h-9 w-auto" />
+            <img src="/FULL-LOGO-DARK.png" alt="Alphora Group" className="h-9 w-auto" />
           </a>
 
           {/* Desktop Navigation */}

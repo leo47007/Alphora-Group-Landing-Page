@@ -1,4 +1,4 @@
-import { Building2, Users } from 'lucide-react';
+import { Building2, User, Users } from 'lucide-react';
 
 interface InvestorTypeModalProps {
   onSelect: (type: string) => void;
@@ -16,6 +16,13 @@ const investorTypes = [
     icon: Users,
     title: 'Family Office',
     description: "I'm looking for tailored on-chain and off-chain strategies and ongoing treasury management.",
+  },
+  {
+    id: 'individual',
+    icon: User,
+    title: 'Individual',
+    description:
+      'Alphora Insights gives you premium access to AI-powered market sentiment dashboards, portfolio tracking, and actionable signal tools for equities, commodities, and crypto. Includes continuous product updates and secure account access. Manage or switch monthly/annual plans anytime in the customer portal; plan changes take effect at next renewal.',
   },
 ];
 
