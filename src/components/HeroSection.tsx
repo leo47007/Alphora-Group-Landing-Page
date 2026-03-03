@@ -33,7 +33,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container relative z-10 px-6 text-center">
-        <div className="max-w-4xl mx-auto rounded-2xl border border-white/20 bg-black/35 px-6 py-8 shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-[2px] md:px-10 md:py-10">
+        <div className="max-w-4xl mx-auto px-6 py-8 md:px-10 md:py-10">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-white mb-6 animate-fade-in drop-shadow-[0_4px_20px_rgba(0,0,0,0.85)]">
             Treasury Clarity for
             <br />
