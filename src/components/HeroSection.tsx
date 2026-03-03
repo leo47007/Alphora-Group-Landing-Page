@@ -32,16 +32,6 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(130deg,rgba(78,108,197,0.72)_0%,rgba(95,126,220,0.62)_46%,rgba(44,68,138,0.75)_100%)]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#2a3e82]/40 via-[#2f4fa0]/35 to-background/85" />
-
-      <div
-        className="absolute inset-0 opacity-[0.08]"
-        style={{
-          backgroundImage: 'radial-gradient(circle at 18% 24%, rgba(255,255,255,0.24) 0, rgba(255,255,255,0) 28%), radial-gradient(circle at 78% 12%, rgba(255,255,255,0.2) 0, rgba(255,255,255,0) 25%)',
-        }}
-      />
-
       <div className="container relative z-10 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light text-foreground mb-6 animate-fade-in">
