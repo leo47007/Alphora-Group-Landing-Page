@@ -1,15 +1,44 @@
+const videoModules = import.meta.glob('../../Videos/*.{mp4,mov,MP4,MOV}', {
+  eager: true,
+  import: 'default',
+});
+
+const heroVideos = Object.entries(videoModules)
+  .sort(([pathA], [pathB]) => pathA.localeCompare(pathB))
+  .map(([, src]) => src as string);
+
+const videoSlotSeconds = 10;
+const totalLoopSeconds = Math.max(heroVideos.length * videoSlotSeconds, videoSlotSeconds);
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-background to-background" />
-      
-      {/* Subtle grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
+      <div className="absolute inset-0">
+        {heroVideos.map((videoSrc, index) => (
+          <video
+            key={videoSrc}
+            src={videoSrc}
+            className="absolute inset-0 h-full w-full object-cover hero-video-fade"
+            style={{
+              animationDelay: `${index * videoSlotSeconds}s`,
+              animationDuration: `${totalLoopSeconds}s`,
+            }}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
+        ))}
+      </div>
+
+      <div className="absolute inset-0 bg-[linear-gradient(130deg,rgba(78,108,197,0.72)_0%,rgba(95,126,220,0.62)_46%,rgba(44,68,138,0.75)_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#2a3e82]/40 via-[#2f4fa0]/35 to-background/85" />
+
+      <div
+        className="absolute inset-0 opacity-[0.08]"
         style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
-          backgroundSize: '100px 100px'
+          backgroundImage: 'radial-gradient(circle at 18% 24%, rgba(255,255,255,0.24) 0, rgba(255,255,255,0) 28%), radial-gradient(circle at 78% 12%, rgba(255,255,255,0.2) 0, rgba(255,255,255,0) 25%)',
         }}
       />
 

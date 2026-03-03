@@ -133,6 +133,26 @@
 }
 
 @layer utilities {
+  .hero-video-fade {
+    opacity: 0;
+    animation: heroVideoFade 40s linear infinite;
+  }
+
+  @keyframes heroVideoFade {
+    0% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   .animate-marquee {
     animation: marquee 60s linear infinite;
   }
