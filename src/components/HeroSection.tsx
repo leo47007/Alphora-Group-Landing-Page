@@ -50,22 +50,18 @@ const HeroSection = () => {
           </div>
 
           {/* Stats */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-light text-white mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">4</div>
               <div className="text-sm text-white/85"># Companies Under Management</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-light text-white mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">8+</div>
-              <div className="text-sm text-white/85">Years of Experience</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-light text-white mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">30+</div>
               <div className="text-sm text-white/85">Treasury Playbooks</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-light text-white mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">140+</div>
-              <div className="text-sm text-white/85">Team Members</div>
+              <div className="text-3xl md:text-4xl font-light text-white mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">5</div>
+              <div className="text-sm text-white/85">International Locations: SF, BOS, NYC, Taipei, Tokyo</div>
             </div>
           </div>
         </div>
